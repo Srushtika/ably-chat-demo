@@ -12,7 +12,7 @@ function UserInfo() {
     <div className="userInfo">
       <div className="user">
         <FontAwesomeIcon className="userIcon" icon={faUserAstronaut} />
-        <h2>Ablyan Chatter</h2>
+        <h2>Ablyan</h2>
       </div>
       <div className="icons">
         <FontAwesomeIcon className="icon" icon={faEllipsis} />

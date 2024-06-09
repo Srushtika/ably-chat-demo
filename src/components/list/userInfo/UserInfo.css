@@ -7,18 +7,18 @@
   .user {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
     .userIcon {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
+
       border-radius: 50%;
-      object-fit: cover;
     }
   }
   .icons {
-    diplay: flex;
-    gap: 40px;
+    display: flex;
+    gap: 20px;
 
     .icon {
       width: 20px;
