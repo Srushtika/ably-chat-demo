@@ -5,9 +5,22 @@ import {
   faUserAstronaut,
   faVideo,
   faCircleInfo,
+  faFaceSmile,
+  faCamera,
+  faImage,
+  faMicrophone,
 } from "@fortawesome/free-solid-svg-icons";
+import EmojiPicker from "emoji-picker-react";
+import { useState } from "react";
 
 function Chat() {
+  const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
+  const handleEmoji = (e) => {
+    setText((prev) => prev + e.emoji);
+    setOpen(false);
+  };
+
   return (
     <div className="chat">
       <div className="top">
@@ -25,7 +38,30 @@ function Chat() {
         </div>
       </div>
       <div className="center"></div>
-      <div className="bottom"></div>
+      <div className="bottom">
+        <div className="icons">
+          <FontAwesomeIcon className="userIcon" icon={faImage} />
+          <FontAwesomeIcon className="userIcon" icon={faCamera} />
+          <FontAwesomeIcon className="userIcon" icon={faMicrophone} />
+        </div>
+        <input
+          type="text"
+          placeholder="Type a message..."
+          onChange={(e) => setText(e.target.value)}
+          value={text}
+        />
+        <div className="emoji">
+          <FontAwesomeIcon
+            className="userIcon"
+            icon={faFaceSmile}
+            onClick={() => setOpen((prev) => !prev)}
+          />
+          <div className="picker">
+            <EmojiPicker open={open} onEmojiClick={handleEmoji} />
+          </div>
+        </div>
+        <button className="sendButton">Send</button>
+      </div>
     </div>
   );
 }
